@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/navbar";
+import { Toaster } from "react-hot-toast";
+import { useEffect } from "react";
+import { useLoginStore } from "./store/login.store";
 
 function App() {
+  const { loadLogin, token, user } = useLoginStore();
+
+  useEffect(() => {
+    if (!token || !user) loadLogin();
+  }, [loadLogin, token, user]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="h-screen">
+      <Navbar />
+      <div className="w-full full-screen">
+        <Outlet />
+      </div>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 }
