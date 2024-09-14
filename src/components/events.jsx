@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useEventsStore } from "../store/events.store";
+import { NavLink } from "react-router-dom";
 
 function Events() {
   const { events, fetchEvents } = useEventsStore();
@@ -10,13 +11,16 @@ function Events() {
     <div className="h-full w-full">
       <div className="flex justify-between items-center">
         <span>Events</span>
-        <button className="px-4 py-1 flex items-center justify-center text-white text-sm bg-violet-500 rounded">
+        <NavLink
+          to={"add-events"}
+          className="px-4 py-1 flex items-center justify-center text-white text-sm bg-violet-500 rounded"
+        >
           + Add
-        </button>
+        </NavLink>
       </div>
       <div className=" p-2 flex flex-wrap">
-        {events?.map((event) => (
-          <EventCard event={event} />
+        {events?.map((event, index) => (
+          <EventCard event={event} key={index} />
         ))}
       </div>
     </div>

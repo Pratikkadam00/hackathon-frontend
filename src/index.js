@@ -11,6 +11,7 @@ import Dashboard from "./components/dashboard";
 import ProtectedRoute from "./components/protected-route";
 import Events from "./components/events";
 import Users from "./components/users";
+import EventForm from "./components/add-event-form";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
           {
             path: "users",
             element: <Users />,
+          },
+          {
+            path: "events/add-events",
+            element: <EventForm />,
           },
         ],
       },
