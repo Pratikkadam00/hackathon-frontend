@@ -39,9 +39,11 @@ const Login = () => {
 
   useEffect(() => {
     if (token && user) {
-      navigate("/dashboard");
+      if (location?.state?.from?.pathname) {
+        navigate(location?.state?.from?.pathname);
+      } else navigate("/dashboard/events");
     }
-  }, [token, user, location, navigate]);
+  }, [token, user, location?.state, navigate]);
 
   return (
     <div className="full-screen flex justify-center items-center">
@@ -101,7 +103,7 @@ const Login = () => {
         <div className="flex items-center justify-between">
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-violet-500 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Sign In
           </button>

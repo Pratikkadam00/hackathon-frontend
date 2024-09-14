@@ -9,8 +9,8 @@ export const useLoginStore = create((set) => ({
   login: async (payload) => {
     try {
       const res = await API.post(LOGIN, payload);
-      const { email, _id, name, token } = res.data;
-      const user = { email, _id, name, token };
+      const { email, _id, name, token, role } = res.data;
+      const user = { email, _id, name, role };
       set({ user, token: token });
       sessionStorage.setItem("token", token);
       sessionStorage.setItem("user", JSON.stringify(user));

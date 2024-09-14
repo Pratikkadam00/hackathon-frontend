@@ -9,6 +9,8 @@ import Error from "./components/error";
 import Register from "./components/register";
 import Dashboard from "./components/dashboard";
 import ProtectedRoute from "./components/protected-route";
+import Events from "./components/events";
+import Users from "./components/users";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,17 @@ const router = createBrowserRouter([
             <Dashboard />
           </ProtectedRoute>
         ),
+        children: [
+          {
+            path: "events",
+            element: <Events />,
+            index: true,
+          },
+          {
+            path: "users",
+            element: <Users />,
+          },
+        ],
       },
     ],
   },

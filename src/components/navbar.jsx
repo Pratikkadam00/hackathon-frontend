@@ -26,27 +26,27 @@ const Navbar = () => {
     },
   ];
   return (
-    <header className="bg-slate-50">
+    <header className="bg-violet-600">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
           <a href="#" className="">
-            <span className="">Evento</span>
+            <span className="text-white">Evento</span>
           </a>
         </div>
 
         <div className="hidden lg:flex lg:gap-3 lg:flex-1 lg:justify-end">
           {token ? (
             <div className="flex gap-3">
-              <div className="flex flex-col items-end">
-                <span className="text-sm">{user.name}</span>
+              <div className="flex flex-col items-end text-white">
+                <span className="text-sm font-semibold">{user.name}</span>
                 <span className="text-[10px]">{user.email}</span>
               </div>
               <button
                 onClick={() => logout()}
-                className="text-sm font-semibold px-3 py-1 rounded-lg text-gray-900 hover:bg-slate-200"
+                className="text-sm font-semibold px-3 py-1 rounded-lg text-white hover:bg-violet-700"
               >
                 Logout
               </button>
@@ -57,8 +57,8 @@ const Navbar = () => {
                 key={link.key}
                 to={link.path}
                 className={({ isActive }) =>
-                  `text-sm font-semibold leading-6 text-gray-900 border-b-2 ${
-                    isActive ? "border-blue-500" : "border-slate-50"
+                  `text-sm font-semibold leading-6 text-white border-b-2 ${
+                    isActive ? "border-white" : "border-violet-600"
                   } `
                 }
               >
