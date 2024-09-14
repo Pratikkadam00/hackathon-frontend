@@ -13,6 +13,7 @@ import Events from "./components/events";
 import Users from "./components/users";
 import EventForm from "./components/add-event-form";
 
+//routes
 const router = createBrowserRouter([
   {
     path: "/",
