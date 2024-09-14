@@ -5,7 +5,7 @@ function Dashboard() {
   return (
     <div className="full-screen w-full flex">
       <SideNavbar />
-      <div className="lg:w-[85%] h-full">
+      <div className="w-[85%] h-full p-4">
         <Outlet />
       </div>
     </div>

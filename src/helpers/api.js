@@ -6,8 +6,7 @@ const API = axios.create({
 
 API.interceptors.request.use(
   function (config) {
-    // Do something before request is sent
-    console.log("ghjkkkkkkkkkkkkkkkkk-----------------:>>", config.url);
+    config.headers.Authorization = "Bearer " + sessionStorage.getItem("token");
     return config;
   },
   function (error) {

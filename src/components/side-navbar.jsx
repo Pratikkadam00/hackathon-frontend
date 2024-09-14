@@ -1,7 +1,7 @@
 import React from "react";
 import { useLoginStore } from "../store/login.store";
 import { NavLink } from "react-router-dom";
-
+import { Calendar, Users } from "lucide-react";
 function SideNavbar() {
   const { user } = useLoginStore();
 
@@ -15,12 +15,12 @@ function SideNavbar() {
 export default SideNavbar;
 
 const NavList = ({ role }) => {
-  console.log("role", role);
   const commonLinks = [
     {
       path: "/dashboard/events",
       title: "Events",
       id: 1,
+      icon: <Calendar size={20} />,
     },
   ];
   switch (role) {
@@ -31,6 +31,7 @@ const NavList = ({ role }) => {
           path: "/dashboard/users",
           title: "Users",
           id: 2,
+          icon: <Users size={20} />,
         },
       ];
 
@@ -39,11 +40,12 @@ const NavList = ({ role }) => {
           key={index}
           to={link.path}
           className={({ isActive }) =>
-            `w-full p-1.5 px-2 rounded-lg text-white hover:bg-violet-900/50 ${
+            `w-full p-1.5 px-2 flex gap-3 items-center rounded-lg text-white hover:bg-violet-900/50 ${
               isActive && "bg-violet-900/50"
             }`
           }
         >
+          {link.icon}
           {link.title}
         </NavLink>
       ));
@@ -56,11 +58,12 @@ const NavList = ({ role }) => {
           key={index}
           to={link.path}
           className={({ isActive }) =>
-            `w-full p-1.5 px-2 rounded-lg text-white hover:bg-violet-900/50 ${
+            `w-full p-1.5 px-2 flex gap-3 items-center rounded-lg text-white hover:bg-violet-900/50 ${
               isActive && "bg-violet-900/50"
             }`
           }
         >
+          {link.icon}
           {link.title}
         </NavLink>
       ));
