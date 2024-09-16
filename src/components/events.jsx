@@ -31,7 +31,7 @@ export default Events;
 
 const EventCard = ({ event }) => {
   return (
-    <div className="lg:w-1/4 text-sm relative bg-white flex flex-col shadow-lg rounded-lg overflow-hidden border border-gray-200">
+    <div className="lg:w-1/4 mx-5 my-5 text-sm relative bg-white flex flex-col shadow-lg rounded-lg overflow-hidden border border-gray-200">
       <div className="p-4">
         {/* Event Title */}
         <h2 className="font-bold text-gray-900 mb-2">{event.title}</h2>
@@ -51,14 +51,16 @@ const EventCard = ({ event }) => {
               ))}
             </ul>
           ) : (
-            <p className="text-gray-600 italic">No attendees yet</p>
+            <p className="text-gray-600 ">0 Attendees</p>
           )}
         </div>
 
         {/* Created By */}
         <div className="mb-4 text-xs">
           <h3 className="font-semibold text-gray-800">Created By:</h3>
-          <p className="text-gray-600">{event.createdBy.name}</p>
+          <p className="text-gray-600 first-letter:capitalize">
+            {event.createdBy.name}
+          </p>
         </div>
 
         {/* Notifications Status */}
