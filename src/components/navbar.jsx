@@ -31,9 +31,16 @@ const Navbar = () => {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
+        {/* <div className="flex lg:flex-1">
+          <a href="#" className="">
+            <span className="text-white text-2xl font-medium ">Evento</span>
+          </a>
+        </div> */}
         <div className="flex lg:flex-1">
           <a href="#" className="">
-            <span className="text-white">Evento</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-pink-600 text-5xl font-medium font-[Pacifico] drop-shadow-lg">
+              Evento
+            </span>
           </a>
         </div>
 
@@ -41,12 +48,14 @@ const Navbar = () => {
           {token ? (
             <div className="flex gap-3">
               <div className="flex flex-col items-end text-white">
-                <span className="text-sm font-semibold">{user.name}</span>
-                <span className="text-[10px]">{user.email}</span>
+                <span className="text-base font-semibold first-letter:capitalize">
+                  {user.name}
+                </span>
+                <span className="text-lg ">{user.email}</span>
               </div>
               <button
                 onClick={() => logout()}
-                className="text-sm font-semibold px-3 py-1 rounded-lg text-white hover:bg-violet-700"
+                className="text-base mx-5 font-semibold px-3 py-1 rounded-lg text-white hover:bg-violet-700"
               >
                 Logout
               </button>

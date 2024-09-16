@@ -6,7 +6,7 @@ function SideNavbar() {
   const { user } = useLoginStore();
 
   return (
-    <div className="lg:w-[15%] lg:h-full bg-violet-950 p-4 flex flex-col gap-2">
+    <div className="lg:w-[15%] h-100% bg-violet-950 p-4 flex flex-col gap-2">
       <NavList role={user.role} />
     </div>
   );

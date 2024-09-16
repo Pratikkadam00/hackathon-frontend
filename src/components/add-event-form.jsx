@@ -47,7 +47,7 @@ const EventForm = () => {
   }, []);
 
   return (
-    <div className="max-w-md mx-auto bg-white p-4 rounded-lg shadow-lg">
+    <div className="max-w-md mx-auto bg-white p-4 rounded-lg shadow-xl mt-10">
       <h1 className=" font-bold mb-4">Create Event</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Title */}
